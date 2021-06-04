@@ -8,7 +8,7 @@ import {REACT_APP_API_URL} from "./plugins"
 function Blog() {
 
 
-    const [blogs, setBlogs] = useState([])
+const [blogs, setBlogs] = useState([])
 const [featuredBlog, setFeaturedBlog] = useState([])
 
 
@@ -66,13 +66,13 @@ const getBlogs = () => {
             <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div className="col p-4 d-flex flex-column position-static">
                     <strong className="d-inline-block mb-2 text-primary">{blogPost.category}</strong>
-                    <h3 className="mb-0">Featured post</h3>
-                    <div className="mb-1 text-muted">Nov 12</div>
-                    <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <Link href="/" className="stretched-link">Continue reading</Link>
+                    <h3 className="mb-0">{blogPost.title}</h3>
+                    <div className="mb-1 text-muted">{blogPost.date_created}</div>
+                    <p className="card-text mb-auto">{blogPost.excerpt}</p>
+                    <Link to={`/blog/${blogPost.slug}`} className="stretched-link">Continue reading</Link>
                 </div>
                 <div className="col-auto d-none d-lg-block">
-                <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="/55595c"></rect><text x="50%" y="50%" fill="/eceeef" dy=".3em">Thumbnail</text></svg>
+                    <img src={blogPost.image_cover} width="200" height="250" alt="" style={{objectFit: 'contain'}}/>
                 </div>
         </div>
         )
