@@ -1,7 +1,7 @@
-## to run locally.
+## local setup instructions below.
 
 
-### to run the backend
+### for running the backend
 
 ```
 cd backend
@@ -11,7 +11,7 @@ pip install -r requirements.txt
 python manage.py runserver
 
 ```
-### to run the fronted (ensure you are in the root terminal)
+### for running the backend (ensure you are in the root terminal)
 
 ```
 npm install
