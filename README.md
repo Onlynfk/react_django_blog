@@ -19,7 +19,7 @@ pip install -r requirements.txt
 python manage.py runserver
 
 ```
-### for running the backend (ensure you are in the root terminal)
+### for running the backend (ensure you are in the root directory)
 
 ```
 npm install
