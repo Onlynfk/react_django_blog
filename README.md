@@ -1,9 +1,9 @@
 
 ### General features
  - List Blog post
- - See Blog Post detials
+ - See Blog Post details
  -  Filter featured Blog posts
- -  Search using Blog post categories
+ -  Search for blog post using categories
  -  more to come ✨
 
 ### local setup instructions below 👇🏼.
