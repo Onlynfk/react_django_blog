@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.template.defaultfilters import slugify
+from PIL import Image
 
 
 class Categories(models.TextChoices):
@@ -46,6 +47,16 @@ class BlogPost(models.Model):
                 except BlogPost.DoesNotExist:
                     pass
         super(BlogPost, self).save(*args, **kwargs)
+    
+
+    def imageSave(self):
+        super().imageSave()
+
+        img = Image.open(self.image_cover.path)
+        if img.height > 250 or img.width > 200:
+            output_size = (250, 200)
+            img.thumbnail(output_size)
+            img.save(self.image_cover.path)
 
     def __str__(self):
         return self.title

@@ -10,10 +10,7 @@ function Category(props) {
     const [currentCategory, setcurrentCategory] = useState('')
 
 
-    useEffect(() =>{
-       
-
-        
+    useEffect(() =>{ 
     const capitalizeFirstLetter = (word) =>{
         if(word){   
             return word.charAt(0).toUpperCase() + word.slice(1);
@@ -25,7 +22,7 @@ function Category(props) {
     const category= props.match.params.id
     setcurrentCategory(capitalizeFirstLetter(category))
 
-    
+   
         const config ={
             headers:{
                 'Content-Type': 'application/json'

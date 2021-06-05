@@ -6,6 +6,8 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .models import BlogPost
 from .serializers import BlogPostSerializer
+from rest_framework.viewsets import ModelViewSet
+
 
 
 class BlogPostListView(ListAPIView):
@@ -42,6 +44,11 @@ class BlogPostCategoryView(APIView):
 
         return Response(serializer.data)
 
+
+class BlogPostCreateView(ModelViewSet):
+    serializer_class = BlogPostSerializer
+    queryset = BlogPost.objects.all()
+    permission_classes = (permissions.AllowAny,)
 
 
 
